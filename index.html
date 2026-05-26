@@ -37,7 +37,7 @@ max-width:900px;
 }
 
 #title{
-font-size:52px;
+font-size:58px;
 font-weight:700;
 letter-spacing:3px;
 color:#7f98c9;
@@ -92,7 +92,7 @@ padding:48px 22px 32px;
 }
 
 #title{
-font-size:34px;
+font-size:38px;
 letter-spacing:2px;
 margin-bottom:14px;
 }
@@ -129,7 +129,7 @@ line-height:1.5;
 @media (max-width:420px){
 
 #title{
-font-size:30px;
+font-size:32px;
 }
 
 #date{
@@ -164,15 +164,22 @@ font-size:15px;
 <div id="countdown"></div>
 
 <div id="schedule">
-  <div class="schedule-item">June 4, Thursday — Arrivals and Cocktail Party</div>
-  <div class="schedule-item">June 5, Friday — Keswick Pool Day & River Bateau Dinner</div>
-  <div class="schedule-item">June 6, Saturday — Vineyards & Downtown Dinner and Bar Hop</div>
-  <div class="schedule-item">June 7, Sunday — Polo & Pizza Chef Dinner</div>
+
+<div class="schedule-item">June 4, Thursday — Arrivals and Cocktail Party</div>
+
+<div class="schedule-item">June 5, Friday — Keswick Pool Day & River Bateau Dinner</div>
+
+<div class="schedule-item">June 6, Saturday — Vineyards & Downtown Dinner and Bar Hop</div>
+
+<div class="schedule-item">June 7, Sunday — Polo & Pizza Chef Dinner</div>
+
 </div>
 
 <div id="footer">
-  For Swedish pronunciation lessons, please contact Chad Mezoian.
-  Reach out to Jesse for details.
+
+For Swedish pronunciation lessons, please contact Chad Mezoian.
+Reach out to Jesse for details.
+
 </div>
 
 </div>
@@ -180,6 +187,7 @@ font-size:15px;
 <script>
 
 const eventDate = new Date("June 4, 2026 00:00:00");
+
 const countdownEl = document.getElementById("countdown");
 
 function updateCountdown(){
@@ -188,8 +196,11 @@ const now = new Date();
 const diff = eventDate - now;
 
 if(diff <= 0){
-countdownEl.innerHTML = "IT'S HERE!";
+
+countdownEl.innerHTML = "IT'S HERE! POP BOTTLES!";
+
 return;
+
 }
 
 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -203,6 +214,7 @@ countdownEl.innerHTML =
 }
 
 updateCountdown();
+
 setInterval(updateCountdown,1000);
 
 </script>
