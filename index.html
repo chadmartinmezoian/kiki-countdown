@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8" />
+
 <title>Kiki's Bach Countdown</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,11 +25,10 @@ background:#f8f3ea;
 text-align:center;
 padding:40px;
 font-family:'Josefin Sans', sans-serif;
-color:#7f98c9;
 }
 
 #title{
-font-size:4vw;
+font-size:5vw;
 font-weight:700;
 letter-spacing:4px;
 color:#7f98c9;
@@ -46,14 +47,14 @@ font-weight:300;
 font-size:2.5vw;
 font-weight:600;
 margin-bottom:50px;
-color:#8ba37f;
+color:#9caf88;
 letter-spacing:1px;
 }
 
 #schedule{
 font-size:1.8vw;
 line-height:2.3;
-color:#7f98c9;
+color:#9caf88;
 margin-bottom:60px;
 font-weight:300;
 }
@@ -61,7 +62,7 @@ font-weight:300;
 #footer{
 font-size:1.2vw;
 font-style:italic;
-color:#7f98c9;
+color:#9caf88;
 max-width:900px;
 line-height:1.8;
 font-weight:300;
@@ -70,7 +71,7 @@ font-weight:300;
 @media (max-width:768px){
 
 #title{
-font-size:9vw;
+font-size:11vw;
 }
 
 #date{
@@ -92,6 +93,7 @@ font-size:3.5vw;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -103,35 +105,50 @@ font-size:3.5vw;
 <div id="countdown"></div>
 
 <div id="schedule">
-  <div>June 4, Thursday — Arrivals and Cocktail Party</div>
-  <div>June 5, Friday — Keswick Pool Day & River Bateau Dinner</div>
-  <div>June 6, Saturday — Vineyards & Downtown Dinner and Bar Hop</div>
-  <div>June 7, Sunday — Polo & Pizza Chef Dinner</div>
+
+<div>June 4, Thursday — Arrivals and Cocktail Party</div>
+
+<div>June 5, Friday — Keswick Pool Day & River Bateau Dinner</div>
+
+<div>June 6, Saturday — Vineyards & Downtown Dinner and Bar Hop</div>
+
+<div>June 7, Sunday — Polo & Pizza Chef Dinner</div>
+
 </div>
 
 <div id="footer">
-  For Swedish pronunciation lessons, please contact Chad Mezoian.
-  Reach out to Jesse for details.
+
+For Swedish pronunciation lessons, please contact Chad Mezoian.
+Reach out to Jesse for details.
+
 </div>
 
 <script>
 
 const eventDate = new Date("June 4, 2026 00:00:00");
+
 const countdownEl = document.getElementById("countdown");
 
 function updateCountdown(){
 
 const now = new Date();
+
 const diff = eventDate - now;
 
 if(diff <= 0){
+
 countdownEl.innerHTML = "IT'S HERE!";
+
 return;
+
 }
 
 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
 countdownEl.innerHTML =
@@ -140,9 +157,11 @@ countdownEl.innerHTML =
 }
 
 updateCountdown();
+
 setInterval(updateCountdown,1000);
 
 </script>
 
 </body>
+
 </html>
