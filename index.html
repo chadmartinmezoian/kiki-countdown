@@ -2,15 +2,13 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8" />
-
 <title>Kiki's Bach Countdown</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -29,23 +27,23 @@ color:#7f98c9;
 }
 
 #title{
-font-family:'Great Vibes', cursive;
-font-size:8vw;
-color:#6f8fcf;
-margin-bottom:10px;
-line-height:1.1;
+font-size:4vw;
+font-weight:700;
+letter-spacing:4px;
+color:#7f98c9;
+margin-bottom:20px;
 }
 
 #date{
 font-size:2vw;
-letter-spacing:4px;
-color:#88a4d8;
-margin-bottom:50px;
+letter-spacing:3px;
+color:#7f98c9;
+margin-bottom:45px;
 font-weight:300;
 }
 
 #countdown{
-font-size:2.3vw;
+font-size:2.5vw;
 font-weight:600;
 margin-bottom:50px;
 color:#8ba37f;
@@ -61,17 +59,18 @@ font-weight:300;
 }
 
 #footer{
-font-size:1.1vw;
+font-size:1.2vw;
 font-style:italic;
-color:#8ea0c8;
+color:#7f98c9;
 max-width:900px;
 line-height:1.8;
+font-weight:300;
 }
 
 @media (max-width:768px){
 
 #title{
-font-size:18vw;
+font-size:9vw;
 }
 
 #date{
@@ -87,68 +86,52 @@ font-size:4.5vw;
 }
 
 #footer{
-font-size:3vw;
+font-size:3.5vw;
 }
 
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div id="title">KIKI’S BACH COUNTDOWN</div>
 
-<div id="date">JULY 24–26, 2026</div>
+<div id="date">JUNE 4, 2026</div>
 
 <div id="countdown"></div>
 
 <div id="schedule">
-
-<div>July 23, Thursday — Arrivals and Cocktail Party</div>
-
-<div>July 24, Friday — Keswick Pool Day & River Bateau Dinner</div>
-
-<div>July 25, Saturday — Vineyards & Downtown Dinner and Bar Hop</div>
-
-<div>July 26, Sunday — Polo & Pizza Chef Dinner</div>
-
+  <div>June 4, Thursday — Arrivals and Cocktail Party</div>
+  <div>June 5, Friday — Keswick Pool Day & River Bateau Dinner</div>
+  <div>June 6, Saturday — Vineyards & Downtown Dinner and Bar Hop</div>
+  <div>June 7, Sunday — Polo & Pizza Chef Dinner</div>
 </div>
 
 <div id="footer">
-
-For Swedish pronunciation lessons, please contact Chad Mezoian.
-Reach out to Jesse for details.
-
+  For Swedish pronunciation lessons, please contact Chad Mezoian.
+  Reach out to Jesse for details.
 </div>
 
 <script>
 
-const eventDate = new Date("July 23, 2026 00:00:00");
-
+const eventDate = new Date("June 4, 2026 00:00:00");
 const countdownEl = document.getElementById("countdown");
 
 function updateCountdown(){
 
 const now = new Date();
-
 const diff = eventDate - now;
 
 if(diff <= 0){
-
 countdownEl.innerHTML = "IT'S HERE!";
-
 return;
-
 }
 
 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-
 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-
 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-
 const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
 countdownEl.innerHTML =
@@ -157,11 +140,9 @@ countdownEl.innerHTML =
 }
 
 updateCountdown();
-
 setInterval(updateCountdown,1000);
 
 </script>
 
 </body>
-
 </html>
