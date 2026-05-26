@@ -1,58 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" />
+
+<title>Kiki's Bach Countdown</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 
 body{
 margin:0;
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-font-family:Arial, Helvetica, sans-serif;
+background:#f8f3ea;
 text-align:center;
-background:#fdf6e3;
-color:#9caf88;
+padding:40px;
+font-family:'Josefin Sans', sans-serif;
+color:#7f98c9;
 }
 
 #title{
-font-size:5vw;
-font-weight:bold;
-margin-bottom:40px;
-color:#a8cfa8;
+font-family:'Great Vibes', cursive;
+font-size:8vw;
+color:#6f8fcf;
+margin-bottom:10px;
+line-height:1.1;
+}
+
+#date{
+font-size:2vw;
+letter-spacing:4px;
+color:#88a4d8;
+margin-bottom:50px;
+font-weight:300;
 }
 
 #countdown{
-font-size:3vw;
-font-weight:bold;
-margin-bottom:40px;
-color:#8fbf8f;
+font-size:2.3vw;
+font-weight:600;
+margin-bottom:50px;
+color:#8ba37f;
+letter-spacing:1px;
 }
 
 #schedule{
 font-size:1.8vw;
-line-height:2;
-margin-bottom:50px;
-color:#7ea07e;
+line-height:2.3;
+color:#7f98c9;
+margin-bottom:60px;
+font-weight:300;
 }
 
 #footer{
-font-size:1.2vw;
+font-size:1.1vw;
 font-style:italic;
-color:#93a893;
+color:#8ea0c8;
 max-width:900px;
+line-height:1.8;
 }
 
 @media (max-width:768px){
 
 #title{
-font-size:10vw;
+font-size:18vw;
+}
+
+#date{
+font-size:5vw;
 }
 
 #countdown{
-font-size:6vw;
+font-size:5vw;
 }
 
 #schedule{
-font-size:4vw;
+font-size:4.5vw;
 }
 
 #footer{
@@ -62,3 +93,75 @@ font-size:3vw;
 }
 
 </style>
+
+</head>
+
+<body>
+
+<div id="title">KIKI’S BACH COUNTDOWN</div>
+
+<div id="date">JULY 24–26, 2026</div>
+
+<div id="countdown"></div>
+
+<div id="schedule">
+
+<div>July 23, Thursday — Arrivals and Cocktail Party</div>
+
+<div>July 24, Friday — Keswick Pool Day & River Bateau Dinner</div>
+
+<div>July 25, Saturday — Vineyards & Downtown Dinner and Bar Hop</div>
+
+<div>July 26, Sunday — Polo & Pizza Chef Dinner</div>
+
+</div>
+
+<div id="footer">
+
+For Swedish pronunciation lessons, please contact Chad Mezoian.
+Reach out to Jesse for details.
+
+</div>
+
+<script>
+
+const eventDate = new Date("July 23, 2026 00:00:00");
+
+const countdownEl = document.getElementById("countdown");
+
+function updateCountdown(){
+
+const now = new Date();
+
+const diff = eventDate - now;
+
+if(diff <= 0){
+
+countdownEl.innerHTML = "IT'S HERE!";
+
+return;
+
+}
+
+const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+
+const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+countdownEl.innerHTML =
+`${days} DAYS ${hours} HOURS ${minutes} MINUTES ${seconds} SECONDS`;
+
+}
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+</script>
+
+</body>
+
+</html>
